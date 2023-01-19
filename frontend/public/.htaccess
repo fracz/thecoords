@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Don't rewrite files
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+RewriteRule \.html$ - [L]
+
+# Rewrite API calls to api.php
+RewriteRule ^api api.php [QSA,L]
+
+# Rewrite everything else to index.html to allow html5 state links
+RewriteRule ^ index.html [L]
+
+<ifmodule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+</ifmodule>

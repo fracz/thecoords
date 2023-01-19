@@ -1,0 +1,9 @@
+app:
+  url: https://thecoords.com
+  devMode: false
+  jwtSecret: CHANGE
+  db:
+    host: database
+    dbname: thecoords
+    user: root
+    password: php

@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+use App\Application\Cli\CliApp;
+use App\Infrastructure\AppContainer;
+
+require __DIR__ . '/vendor/autoload.php';
+
+$container = AppContainer::getContainer();
+$cli = $container->get(CliApp::class);
+$cli->run();
